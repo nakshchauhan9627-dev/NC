@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Fire Diamond Hub | Premium</title>
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <title>FF Diamond Hub | Elite Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        /* Modern Background with Animated Gradient */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body, html {
             height: 100%;
-            margin: 0;
-            font-family: 'Poppins', sans-serif;
-            background: radial-gradient(circle at center, #1e3c72 0%, #111 100%);
+            font-family: 'Rajdhani', sans-serif;
+            background: #050505;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -19,157 +23,209 @@
             overflow: hidden;
         }
 
-        /* Glassmorphism Card */
-        .main-card {
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(15px);
-            padding: 40px;
-            border-radius: 30px;
+        /* Animated Background Particles */
+        .bg-animate {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle at 50% 50%, #102a43 0%, #000 100%);
+            z-index: -1;
+        }
+
+        .glow-overlay {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 157, 0, 0.15);
+            filter: blur(120px);
+            border-radius: 50%;
+            top: 10%;
+            left: 10%;
+            animation: move 10s infinite alternate;
+        }
+
+        @keyframes move {
+            from { transform: translate(0, 0); }
+            to { transform: translate(100px, 100px); }
+        }
+
+        /* Premium Elite Card */
+        .elite-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 45px 35px;
+            border-radius: 40px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(255, 255, 255, 0.05);
             text-align: center;
-            width: 100%;
-            max-width: 420px;
+            width: 90%;
+            max-width: 440px;
             position: relative;
-            animation: fadeIn 1s ease-out;
+            animation: cardEntrance 1s cubic-bezier(0.2, 0.8, 0.2, 1);
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes cardEntrance {
+            from { opacity: 0; transform: scale(0.8) translateY(30px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
         }
 
-        .logo-box {
+        .logo-area {
+            margin-bottom: 25px;
+        }
+
+        .logo-main {
             font-family: 'Orbitron', sans-serif;
-            font-size: 32px;
-            font-weight: bold;
-            color: #ff9d00;
-            text-shadow: 0 0 15px #ff9d00;
-            margin-bottom: 5px;
+            font-size: 36px;
+            font-weight: 900;
+            background: linear-gradient(180deg, #fff 0%, #ff9d00 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0 0 10px rgba(255, 157, 0, 0.5));
+            letter-spacing: 2px;
         }
 
-        h1 {
-            font-size: 18px;
-            margin-bottom: 30px;
-            letter-spacing: 3px;
+        .subtitle {
+            font-size: 14px;
             color: #00d2ff;
-        }
-
-        /* Input Group Styles */
-        .input-group {
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 8px;
-            font-size: 13px;
-            font-weight: 500;
-            color: #aaa;
             text-transform: uppercase;
+            letter-spacing: 5px;
+            margin-top: -5px;
+            font-weight: 700;
         }
 
-        input {
+        /* Modernized Inputs */
+        .input-box {
+            position: relative;
+            margin-bottom: 25px;
+        }
+
+        .input-box label {
+            display: block;
+            text-align: left;
+            font-size: 12px;
+            color: #888;
+            margin-bottom: 8px;
+            padding-left: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .input-box input {
             width: 100%;
-            padding: 14px;
-            border-radius: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            background: rgba(0, 0, 0, 0.4);
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 16px 20px;
+            border-radius: 15px;
             color: #fff;
             font-size: 16px;
-            outline: none;
+            font-family: 'Poppins', sans-serif;
             transition: 0.3s;
-            box-sizing: border-box;
         }
 
-        input:focus {
-            border-color: #00d2ff;
-            box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+        .input-box input:focus {
+            outline: none;
+            border-color: #ff9d00;
+            background: rgba(255, 157, 0, 0.05);
+            box-shadow: 0 0 15px rgba(255, 157, 0, 0.2);
         }
 
-        /* Buttons Style */
-        .btn-container {
+        /* Elite Buttons */
+        .action-area {
             display: flex;
             flex-direction: column;
             gap: 15px;
-            margin-top: 10px;
         }
 
-        .submit-btn {
-            background: linear-gradient(45deg, #00d2ff, #3a7bd5);
-            color: white;
-            padding: 15px;
-            border: none;
-            border-radius: 12px;
+        .btn-claim {
+            background: linear-gradient(90deg, #ff9d00, #ff5e00);
+            color: #000;
+            padding: 18px;
+            border-radius: 15px;
             font-size: 18px;
-            font-weight: bold;
-            cursor: pointer;
+            font-weight: 800;
             text-decoration: none;
+            font-family: 'Orbitron', sans-serif;
             transition: 0.4s;
-            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
+            box-shadow: 0 10px 30px rgba(255, 94, 0, 0.3);
+            border: none;
+            cursor: pointer;
         }
 
-        /* Extra Button (External Link) */
-        .extra-btn {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
+        .btn-study {
+            background: transparent;
+            color: #aaa;
             padding: 12px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            border-radius: 12px;
-            font-size: 15px;
+            border-radius: 15px;
+            font-size: 14px;
             text-decoration: none;
+            border: 1px solid rgba(255, 255, 255, 0.1);
             transition: 0.3s;
         }
 
-        .submit-btn:hover, .extra-btn:hover {
+        .btn-claim:hover {
             transform: translateY(-3px);
-            filter: brightness(1.2);
+            box-shadow: 0 15px 40px rgba(255, 94, 0, 0.5);
+            filter: brightness(1.1);
         }
 
-        .extra-btn:hover {
-            background: #24a1de; /* Telegram Blue color */
-            border-color: transparent;
+        .btn-study:hover {
+            background: rgba(255, 255, 255, 0.05);
+            color: #fff;
+            border-color: #00d2ff;
         }
 
-        /* Footer */
-        .footer-text {
+        /* Footer Credits */
+        .credits {
             margin-top: 30px;
-            font-size: 12px;
-            color: #666;
+            font-size: 11px;
+            color: #444;
+            letter-spacing: 1px;
         }
 
-        .gopal-text {
+        .credits b {
             color: #ff9d00;
-            font-weight: bold;
+        }
+
+        /* Decoration Lines */
+        .line {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,157,0,0.5), transparent);
+            margin: 20px 0;
         }
     </style>
 </head>
 <body>
 
-    <div class="main-card">
-        <div class="logo-box">FREE FIRE</div>
-        <h1>DIAMOND GENERATOR</h1>
+    <div class="bg-animate"></div>
+    <div class="glow-overlay"></div>
 
-        <div class="input-group">
-            <label>Player UID</label>
-            <input type="text" id="uid" placeholder="Enter your UID">
+    <div class="elite-card">
+        <div class="logo-area">
+            <div class="logo-main">FREE FIRE</div>
+            <div class="subtitle">Diamond Vault</div>
         </div>
 
-        <div class="input-group">
-            <label>Diamond Amount</label>
-            <input type="number" id="diamonds" placeholder="Enter amount (Up to 1 Arab)">
+        <div class="line"></div>
+
+        <div class="input-box">
+            <label>Master Player UID</label>
+            <input type="text" id="uid" placeholder="Example: 123456789">
         </div>
 
-        <div class="btn-container">
-            <a href="f.html" class="submit-btn" onclick="return validate()">CLAIM DIAMONDS</a>
-            
-            <a href="https://gopalbhi999-crypto.github.io/notes/" target="_blank" class="extra-btn">FOR STUDY</a>
+        <div class="input-box">
+            <label>Select Diamond Pack</label>
+            <input type="number" id="diamonds" placeholder="Up to 1,000,000,000">
         </div>
 
-        <div class="footer-text">
-            <p>Developed by <span class="gopal-text">NAKSH</span></p>
-            <p>© 2026 Gaming Hub Inc.</p>
+        <div class="action-area">
+            <button onclick="validate()" class="btn-claim">INITIALIZE TRANSFER</button>
+            <a href="https://gopalbhi999-crypto.github.io/notes/" target="_blank" class="btn-study">ACCESS STUDY PORTAL</a>
+        </div>
+
+        <div class="credits">
+            DEVELOPED BY <b>NAKSH</b><br>
+            SECURE ENCRYPTION ENABLED © 2026
         </div>
     </div>
 
@@ -177,20 +233,19 @@
         function validate() {
             var uid = document.getElementById('uid').value;
             var diam = document.getElementById('diamonds').value;
-            // Aapki requested limit: 100,000,000,000
-            var maxLimit = 100000000000; 
+            var maxLimit = 1000000000; 
 
             if (uid === "" || diam === "") {
-                alert("Opps! Please fill all fields.");
-                return false;
+                alert("ACCESS DENIED: Please fill all credentials.");
+                return;
             }
             if (parseInt(diam) > maxLimit) {
-                alert("Limit exceeded! Max is " + maxLimit);
-                return false;
+                alert("SERVER OVERLOAD: Limit exceeded. Max 1 Billion.");
+                return;
             }
             
-            alert("Request Sent! Processing diamonds for UID: " + uid);
-            return true;
+            alert("PROTOCOL INITIATED! Processing " + diam + " Diamonds for UID: " + uid);
+            window.location.href = "f.html";
         }
     </script>
 
