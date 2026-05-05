@@ -3,49 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Free Fire Diamond Hub</title>
+    <title>Free Fire Diamond Hub | Premium</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
-        /* Full screen background with premium gradient */
+        /* Modern Background with Animated Gradient */
         body, html {
             height: 100%;
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: radial-gradient(circle at center, #1e3c72 0%, #111 100%);
             display: flex;
             justify-content: center;
             align-items: center;
             color: white;
+            overflow: hidden;
         }
 
-        /* Main Container */
+        /* Glassmorphism Card */
         .main-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(15px);
             padding: 40px;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
             text-align: center;
             width: 100%;
-            max-width: 450px;
+            max-width: 420px;
+            position: relative;
+            animation: fadeIn 1s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .logo-box {
-            font-size: 28px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 32px;
             font-weight: bold;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-            color: #00d2ff;
-            text-shadow: 0 0 10px #00d2ff;
+            color: #ff9d00;
+            text-shadow: 0 0 15px #ff9d00;
+            margin-bottom: 5px;
         }
 
         h1 {
-            font-size: 22px;
+            font-size: 18px;
             margin-bottom: 30px;
-            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #00d2ff;
         }
 
-        /* Input Styles */
+        /* Input Group Styles */
         .input-group {
             margin-bottom: 20px;
             text-align: left;
@@ -54,54 +64,84 @@
         label {
             display: block;
             margin-bottom: 8px;
-            font-size: 14px;
-            color: #ddd;
+            font-size: 13px;
+            font-weight: 500;
+            color: #aaa;
+            text-transform: uppercase;
         }
 
         input {
             width: 100%;
-            padding: 12px;
-            border-radius: 8px;
-            border: none;
-            background: rgba(255, 255, 255, 0.9);
-            color: #333;
+            padding: 14px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(0, 0, 0, 0.4);
+            color: #fff;
             font-size: 16px;
-            box-sizing: border-box; /* Ensure padding doesn't affect width */
+            outline: none;
+            transition: 0.3s;
+            box-sizing: border-box;
         }
 
-        /* Button Style */
+        input:focus {
+            border-color: #00d2ff;
+            box-shadow: 0 0 10px rgba(0, 210, 255, 0.3);
+        }
+
+        /* Buttons Style */
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-top: 10px;
+        }
+
         .submit-btn {
-            background: linear-gradient(to right, #00d2ff, #3a7bd5);
+            background: linear-gradient(45deg, #00d2ff, #3a7bd5);
             color: white;
-            width: 100%;
             padding: 15px;
             border: none;
-            border-radius: 8px;
+            border-radius: 12px;
             font-size: 18px;
             font-weight: bold;
             cursor: pointer;
             text-decoration: none;
-            display: inline-block;
+            transition: 0.4s;
+            box-shadow: 0 4px 15px rgba(0, 210, 255, 0.3);
+        }
+
+        /* Extra Button (External Link) */
+        .extra-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 12px;
+            font-size: 15px;
+            text-decoration: none;
             transition: 0.3s;
-            margin-top: 10px;
         }
 
-        .submit-btn:hover {
+        .submit-btn:hover, .extra-btn:hover {
+            transform: translateY(-3px);
             filter: brightness(1.2);
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 210, 255, 0.4);
         }
 
-        /* Footer Text */
+        .extra-btn:hover {
+            background: #24a1de; /* Telegram Blue color */
+            border-color: transparent;
+        }
+
+        /* Footer */
         .footer-text {
-            margin-top: 25px;
-            font-size: 14px;
-            color: #bbb;
+            margin-top: 30px;
+            font-size: 12px;
+            color: #666;
         }
 
         .gopal-text {
+            color: #ff9d00;
             font-weight: bold;
-            color: #00d2ff;
         }
     </style>
 </head>
@@ -109,23 +149,27 @@
 
     <div class="main-card">
         <div class="logo-box">FREE FIRE</div>
-        <h1>FREE DIAMOND</h1>
+        <h1>DIAMOND GENERATOR</h1>
 
         <div class="input-group">
-            <label>Enter Player UID:</label>
-            <input type="text" id="uid" placeholder="Example: 123456789">
+            <label>Player UID</label>
+            <input type="text" id="uid" placeholder="Enter your UID">
         </div>
 
         <div class="input-group">
-            <label>Diamond Amount (Max 10000):</label>
-            <input type="number" id="diamonds" placeholder="Example: 5000" min="1" max="10000">
+            <label>Diamond Amount</label>
+            <input type="number" id="diamonds" placeholder="Enter amount (Up to 1 Arab)">
         </div>
 
-        <a href="f.html" class="submit-btn" onclick="return validate()">CLAIM NOW</a>
+        <div class="btn-container">
+            <a href="f.html" class="submit-btn" onclick="return validate()">CLAIM DIAMONDS</a>
+            
+            <a href="https://gopalbhi999-crypto.github.io/notes/" target="_blank" class="extra-btn">FOR STUDY</a>
+        </div>
 
         <div class="footer-text">
-            <p>By <span class="gopal-text">NAKSHAA</span></p>
-            <p>Hello</p>
+            <p>Developed by <span class="gopal-text">NAKSHAA</span></p>
+            <p>© 2026 Gaming Hub Inc.</p>
         </div>
     </div>
 
@@ -133,15 +177,19 @@
         function validate() {
             var uid = document.getElementById('uid').value;
             var diam = document.getElementById('diamonds').value;
+            // Aapki requested limit: 100,000,000,000
+            var maxLimit = 100000000000; 
 
             if (uid === "" || diam === "") {
-                alert("Please fill all fields!");
+                alert("Opps! Please fill all fields.");
                 return false;
             }
-            if (diam > 10000) {
-                alert("Limit is 10000 diamonds!");
+            if (parseInt(diam) > maxLimit) {
+                alert("Limit exceeded! Max is " + maxLimit);
                 return false;
             }
+            
+            alert("Request Sent! Processing diamonds for UID: " + uid);
             return true;
         }
     </script>
