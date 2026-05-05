@@ -15,9 +15,9 @@
         body, html {
             height: 100%;
             font-family: 'Rajdhani', sans-serif;
-            file_000000004e887207a92622a8d0ff5b67.png
-            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
-                        url('https://raw.githubusercontent.com/Gopalbhi999-crypto/notes/main/your-image-name.jpg'); 
+            background-color: #050505;
+            /* Yahan apna GitHub link dalein */
+            background-image: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('YOUR_GITHUB_IMAGE_URL');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
@@ -30,117 +30,119 @@
 
         /* Glassmorphism Effect for Card */
         .elite-card {
-            background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+            background: rgba(255, 255, 255, 0.05);
             backdrop-filter: blur(15px);
             -webkit-backdrop-filter: blur(15px);
-            padding: 40px;
+            padding: 45px 35px;
             border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
+            border: 1px solid rgba(255, 255, 255, 0.15);
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
             text-align: center;
             width: 90%;
-            max-width: 420px;
-            z-index: 1;
+            max-width: 440px;
+            position: relative;
             animation: cardEntrance 0.8s ease-out;
         }
 
         @keyframes cardEntrance {
-            from { opacity: 0; transform: translateY(30px); }
-            to { opacity: 1; transform: translateY(0); }
+            from { opacity: 0; transform: scale(0.9) translateY(20px); }
+            to { opacity: 1; transform: scale(1) translateY(0); }
         }
 
         .logo-main {
             font-family: 'Orbitron', sans-serif;
-            font-size: 32px;
+            font-size: 36px;
             font-weight: 900;
-            background: linear-gradient(to bottom, #fff, #00d2ff);
+            background: linear-gradient(180deg, #fff 0%, #00d2ff 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin-bottom: 5px;
+            letter-spacing: 2px;
         }
 
         .subtitle {
-            font-size: 12px;
+            font-size: 14px;
             color: #00ffcc;
-            letter-spacing: 4px;
             text-transform: uppercase;
-            font-weight: bold;
+            letter-spacing: 5px;
+            font-weight: 700;
         }
 
         .line {
-            height: 2px;
+            height: 1px;
             background: linear-gradient(90deg, transparent, #00d2ff, transparent);
-            margin: 20px 0;
+            margin: 25px 0;
         }
 
         .input-box {
-            margin-bottom: 20px;
             text-align: left;
+            margin-bottom: 20px;
         }
 
         .input-box label {
-            font-size: 11px;
-            color: #aaa;
+            font-size: 12px;
+            color: #00d2ff;
+            margin-bottom: 8px;
+            display: block;
             text-transform: uppercase;
-            margin-left: 10px;
+            letter-spacing: 1px;
         }
 
         .input-box input {
             width: 100%;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 14px 18px;
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(0, 210, 255, 0.3);
+            padding: 15px;
             border-radius: 12px;
             color: #fff;
             font-size: 16px;
-            margin-top: 5px;
             transition: 0.3s;
         }
 
         .input-box input:focus {
             outline: none;
-            border-color: #00d2ff;
-            background: rgba(0, 210, 255, 0.05);
+            border-color: #00ffcc;
+            box-shadow: 0 0 15px rgba(0, 255, 204, 0.2);
         }
 
         .btn-claim {
             width: 100%;
-            background: linear-gradient(45deg, #00d2ff, #3a7bd5);
+            background: linear-gradient(90deg, #00d2ff, #3a7bd5);
             color: white;
-            padding: 16px;
+            padding: 18px;
             border-radius: 12px;
+            font-size: 18px;
+            font-weight: 800;
             font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
             border: none;
             cursor: pointer;
+            transition: 0.4s;
             box-shadow: 0 10px 20px rgba(0, 210, 255, 0.3);
-            transition: 0.3s;
-            margin-bottom: 15px;
         }
 
         .btn-claim:hover {
-            transform: scale(1.02);
+            transform: translateY(-3px);
             filter: brightness(1.2);
+            box-shadow: 0 15px 30px rgba(0, 210, 255, 0.5);
         }
 
         .btn-study {
-            color: #888;
+            margin-top: 15px;
+            display: block;
+            color: #aaa;
             text-decoration: none;
-            font-size: 13px;
-            display: inline-block;
+            font-size: 14px;
             transition: 0.3s;
         }
 
-        .btn-study:hover {
-            color: #00d2ff;
-        }
+        .btn-study:hover { color: #fff; }
 
         .credits {
-            margin-top: 25px;
-            font-size: 10px;
-            color: rgba(255, 255, 255, 0.3);
-            letter-spacing: 2px;
+            margin-top: 30px;
+            font-size: 11px;
+            color: rgba(255,255,255,0.4);
         }
+        
+        .credits b { color: #00ffcc; }
     </style>
 </head>
 <body>
@@ -148,27 +150,27 @@
     <div class="elite-card">
         <div class="logo-area">
             <div class="logo-main">FREE FIRE</div>
-            <div class="subtitle">DIAMOND GENERATOR</div>
+            <div class="subtitle">Diamond Vault</div>
         </div>
 
         <div class="line"></div>
 
         <div class="input-box">
-            <label>Player UID</label>
-            <input type="text" id="uid" placeholder="Enter UID here...">
+            <label>Master Player UID</label>
+            <input type="text" id="uid" placeholder="Enter UID here">
         </div>
 
         <div class="input-box">
-            <label>Diamond Amount</label>
-            <input type="number" id="diamonds" placeholder="Enter amount...">
+            <label>Select Diamond Pack</label>
+            <input type="number" id="diamonds" placeholder="Enter Amount">
         </div>
 
-        <button onclick="validate()" class="btn-claim">START INJECTION</button>
-        
-        <a href="https://gopalbhi999-crypto.github.io/notes/" target="_blank" class="btn-study">Go to Study Notes</a>
+        <button onclick="validate()" class="btn-claim">INITIALIZE TRANSFER</button>
+        <a href="https://gopalbhi999-crypto.github.io/notes/" target="_blank" class="btn-study">ACCESS STUDY PORTAL</a>
 
         <div class="credits">
-            SYSTEM SECURED BY <b>NAKSH</b>
+            DEVELOPED BY <b>NAKSH</b><br>
+            SECURE ENCRYPTION ENABLED © 2026
         </div>
     </div>
 
@@ -177,10 +179,10 @@
             var uid = document.getElementById('uid').value;
             var diam = document.getElementById('diamonds').value;
             if (uid === "" || diam === "") {
-                alert("Error: Details missing!");
+                alert("Please fill all details!");
                 return;
             }
-            alert("Injection Started for UID: " + uid);
+            alert("Protocol Initiated for UID: " + uid);
             window.location.href = "f.html";
         }
     </script>
