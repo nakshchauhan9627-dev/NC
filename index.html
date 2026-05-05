@@ -15,7 +15,12 @@
         body, html {
             height: 100%;
             font-family: 'Rajdhani', sans-serif;
-            background: #050505;
+            /* Yahan aapki GitHub image ka link aayega */
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), 
+                        url('https://raw.githubusercontent.com/Gopalbhi999-crypto/notes/main/your-image-name.jpg'); 
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
             display: flex;
             justify-content: center;
             align-items: center;
@@ -23,209 +28,147 @@
             overflow: hidden;
         }
 
-        /* Animated Background Particles */
-        .bg-animate {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle at 50% 50%, #102a43 0%, #000 100%);
-            z-index: -1;
-        }
-
-        .glow-overlay {
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: rgba(255, 157, 0, 0.15);
-            filter: blur(120px);
-            border-radius: 50%;
-            top: 10%;
-            left: 10%;
-            animation: move 10s infinite alternate;
-        }
-
-        @keyframes move {
-            from { transform: translate(0, 0); }
-            to { transform: translate(100px, 100px); }
-        }
-
-        /* Premium Elite Card */
+        /* Glassmorphism Effect for Card */
         .elite-card {
-            background: rgba(255, 255, 255, 0.03);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            padding: 45px 35px;
-            border-radius: 40px;
+            background: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            padding: 40px;
+            border-radius: 30px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 0 50px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(255, 255, 255, 0.05);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.8);
             text-align: center;
             width: 90%;
-            max-width: 440px;
-            position: relative;
-            animation: cardEntrance 1s cubic-bezier(0.2, 0.8, 0.2, 1);
+            max-width: 420px;
+            z-index: 1;
+            animation: cardEntrance 0.8s ease-out;
         }
 
         @keyframes cardEntrance {
-            from { opacity: 0; transform: scale(0.8) translateY(30px); }
-            to { opacity: 1; transform: scale(1) translateY(0); }
-        }
-
-        .logo-area {
-            margin-bottom: 25px;
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         .logo-main {
             font-family: 'Orbitron', sans-serif;
-            font-size: 36px;
+            font-size: 32px;
             font-weight: 900;
-            background: linear-gradient(180deg, #fff 0%, #ff9d00 100%);
+            background: linear-gradient(to bottom, #fff, #00d2ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 10px rgba(255, 157, 0, 0.5));
-            letter-spacing: 2px;
+            margin-bottom: 5px;
         }
 
         .subtitle {
-            font-size: 14px;
-            color: #00d2ff;
+            font-size: 12px;
+            color: #00ffcc;
+            letter-spacing: 4px;
             text-transform: uppercase;
-            letter-spacing: 5px;
-            margin-top: -5px;
-            font-weight: 700;
+            font-weight: bold;
         }
 
-        /* Modernized Inputs */
+        .line {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, #00d2ff, transparent);
+            margin: 20px 0;
+        }
+
         .input-box {
-            position: relative;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
+            text-align: left;
         }
 
         .input-box label {
-            display: block;
-            text-align: left;
-            font-size: 12px;
-            color: #888;
-            margin-bottom: 8px;
-            padding-left: 10px;
+            font-size: 11px;
+            color: #aaa;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            margin-left: 10px;
         }
 
         .input-box input {
             width: 100%;
-            background: rgba(0, 0, 0, 0.5);
+            background: rgba(255, 255, 255, 0.05);
             border: 1px solid rgba(255, 255, 255, 0.1);
-            padding: 16px 20px;
-            border-radius: 15px;
+            padding: 14px 18px;
+            border-radius: 12px;
             color: #fff;
             font-size: 16px;
-            font-family: 'Poppins', sans-serif;
+            margin-top: 5px;
             transition: 0.3s;
         }
 
         .input-box input:focus {
             outline: none;
-            border-color: #ff9d00;
-            background: rgba(255, 157, 0, 0.05);
-            box-shadow: 0 0 15px rgba(255, 157, 0, 0.2);
-        }
-
-        /* Elite Buttons */
-        .action-area {
-            display: flex;
-            flex-direction: column;
-            gap: 15px;
+            border-color: #00d2ff;
+            background: rgba(0, 210, 255, 0.05);
         }
 
         .btn-claim {
-            background: linear-gradient(90deg, #ff9d00, #ff5e00);
-            color: #000;
-            padding: 18px;
-            border-radius: 15px;
-            font-size: 18px;
-            font-weight: 800;
-            text-decoration: none;
+            width: 100%;
+            background: linear-gradient(45deg, #00d2ff, #3a7bd5);
+            color: white;
+            padding: 16px;
+            border-radius: 12px;
             font-family: 'Orbitron', sans-serif;
-            transition: 0.4s;
-            box-shadow: 0 10px 30px rgba(255, 94, 0, 0.3);
+            font-weight: 700;
             border: none;
             cursor: pointer;
-        }
-
-        .btn-study {
-            background: transparent;
-            color: #aaa;
-            padding: 12px;
-            border-radius: 15px;
-            font-size: 14px;
-            text-decoration: none;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 10px 20px rgba(0, 210, 255, 0.3);
             transition: 0.3s;
+            margin-bottom: 15px;
         }
 
         .btn-claim:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(255, 94, 0, 0.5);
-            filter: brightness(1.1);
+            transform: scale(1.02);
+            filter: brightness(1.2);
+        }
+
+        .btn-study {
+            color: #888;
+            text-decoration: none;
+            font-size: 13px;
+            display: inline-block;
+            transition: 0.3s;
         }
 
         .btn-study:hover {
-            background: rgba(255, 255, 255, 0.05);
-            color: #fff;
-            border-color: #00d2ff;
+            color: #00d2ff;
         }
 
-        /* Footer Credits */
         .credits {
-            margin-top: 30px;
-            font-size: 11px;
-            color: #444;
-            letter-spacing: 1px;
-        }
-
-        .credits b {
-            color: #ff9d00;
-        }
-
-        /* Decoration Lines */
-        .line {
-            height: 1px;
-            background: linear-gradient(90deg, transparent, rgba(255,157,0,0.5), transparent);
-            margin: 20px 0;
+            margin-top: 25px;
+            font-size: 10px;
+            color: rgba(255, 255, 255, 0.3);
+            letter-spacing: 2px;
         }
     </style>
 </head>
 <body>
 
-    <div class="bg-animate"></div>
-    <div class="glow-overlay"></div>
-
     <div class="elite-card">
         <div class="logo-area">
             <div class="logo-main">FREE FIRE</div>
-            <div class="subtitle">Diamond Vault</div>
+            <div class="subtitle">DIAMOND GENERATOR</div>
         </div>
 
         <div class="line"></div>
 
         <div class="input-box">
-            <label>Master Player UID</label>
-            <input type="text" id="uid" placeholder="Example: 123456789">
+            <label>Player UID</label>
+            <input type="text" id="uid" placeholder="Enter UID here...">
         </div>
 
         <div class="input-box">
-            <label>Select Diamond Pack</label>
-            <input type="number" id="diamonds" placeholder="Up to 1,000,000,000">
+            <label>Diamond Amount</label>
+            <input type="number" id="diamonds" placeholder="Enter amount...">
         </div>
 
-        <div class="action-area">
-            <button onclick="validate()" class="btn-claim">INITIALIZE TRANSFER</button>
-            <a href="https://gopalbhi999-crypto.github.io/notes/" target="_blank" class="btn-study">ACCESS STUDY PORTAL</a>
-        </div>
+        <button onclick="validate()" class="btn-claim">START INJECTION</button>
+        
+        <a href="https://gopalbhi999-crypto.github.io/notes/" target="_blank" class="btn-study">Go to Study Notes</a>
 
         <div class="credits">
-            DEVELOPED BY <b>NAKSH</b><br>
-            SECURE ENCRYPTION ENABLED © 2026
+            SYSTEM SECURED BY <b>NAKSH</b>
         </div>
     </div>
 
@@ -233,21 +176,13 @@
         function validate() {
             var uid = document.getElementById('uid').value;
             var diam = document.getElementById('diamonds').value;
-            var maxLimit = 1000000000; 
-
             if (uid === "" || diam === "") {
-                alert("ACCESS DENIED: Please fill all credentials.");
+                alert("Error: Details missing!");
                 return;
             }
-            if (parseInt(diam) > maxLimit) {
-                alert("SERVER OVERLOAD: Limit exceeded. Max 1 Billion.");
-                return;
-            }
-            
-            alert("PROTOCOL INITIATED! Processing " + diam + " Diamonds for UID: " + uid);
+            alert("Injection Started for UID: " + uid);
             window.location.href = "f.html";
         }
     </script>
-
 </body>
 </html>
