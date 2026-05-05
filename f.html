@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Success - Naksh Edition</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body, html {
             height: 100%;
-            margin: 0;
             font-family: 'Poppins', sans-serif;
-            background: #0f0c29; /* Darker gaming theme */
-            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+            /* Cool Midnight & Emerald Gradient */
+            background: radial-gradient(circle at top right, #002c3e, #0a0a0a);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -19,61 +24,69 @@
             overflow: hidden;
         }
 
-        /* Garena Background Logo */
-        .garena-bg {
+        /* Abstract Glow Orbs for Background Depth */
+        .glow-orb {
             position: absolute;
-            width: 80%;
-            max-width: 600px;
-            opacity: 0.1; /* Transparent look */
+            width: 400px;
+            height: 400px;
+            background: rgba(0, 210, 255, 0.1);
+            filter: blur(100px);
+            border-radius: 50%;
             z-index: 0;
-            pointer-events: none;
-            filter: grayscale(100%) brightness(200%);
         }
+
+        .orb-1 { top: -100px; left: -100px; background: rgba(123, 31, 162, 0.15); }
+        .orb-2 { bottom: -100px; right: -100px; background: rgba(0, 255, 170, 0.1); }
 
         .success-card {
-            background: rgba(255, 255, 255, 0.07);
-            backdrop-filter: blur(20px);
-            padding: 40px;
-            border-radius: 30px;
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(25px);
+            -webkit-backdrop-filter: blur(25px);
+            padding: 50px 40px;
+            border-radius: 40px;
             border: 1px solid rgba(255, 255, 255, 0.1);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 40px 100px rgba(0, 0, 0, 0.6);
             text-align: center;
             width: 90%;
-            max-width: 450px;
+            max-width: 480px;
             z-index: 1;
-            animation: slideUp 0.8s ease-out;
+            position: relative;
+            animation: fadeInScale 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
 
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(50px); }
-            to { opacity: 1; transform: translateY(0); }
+        @keyframes fadeInScale {
+            from { opacity: 0; transform: scale(0.9); }
+            to { opacity: 1; transform: scale(1); }
         }
 
         .hi-text {
-            font-size: 14px;
+            font-size: 12px;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            color: #00d2ff;
-            margin-bottom: 5px;
+            letter-spacing: 5px;
+            color: #00ffcc;
+            margin-bottom: 10px;
+            font-weight: 600;
         }
 
         .congrats-text {
-            font-size: 38px;
+            font-family: 'Orbitron', sans-serif; /* Modern Tech Font */
+            font-size: 32px;
             font-weight: 800;
-            line-height: 1.2;
-            background: linear-gradient(to right, #ff0000, #ff8c00); /* Garena Red/Orange vibe */
+            line-height: 1.3;
+            /* Neon Cyan & Purple Gradient */
+            background: linear-gradient(to right, #00d2ff, #9d50bb);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin: 15px 0;
+            margin: 20px 0;
         }
 
         .sub-text {
-            font-size: 16px;
-            color: #ccc;
-            margin-bottom: 30px;
+            font-size: 15px;
+            color: #a0a0a0;
+            margin-bottom: 35px;
+            line-height: 1.6;
         }
 
-        /* Button Styling */
         .btn-container {
             display: flex;
             flex-direction: column;
@@ -81,60 +94,71 @@
         }
 
         .btn {
-            padding: 14px 25px;
-            border-radius: 12px;
+            padding: 16px 25px;
+            border-radius: 16px;
             text-decoration: none;
             font-weight: 600;
             font-size: 15px;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             display: block;
             border: none;
+            position: relative;
+            overflow: hidden;
         }
 
+        /* Cool Blue/Cyan Primary Button */
         .primary-btn {
-            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            background: linear-gradient(45deg, #00d2ff, #3a7bd5);
             color: white;
-            box-shadow: 0 4px 15px rgba(255, 65, 108, 0.4);
+            box-shadow: 0 10px 25px rgba(0, 210, 255, 0.2);
         }
 
+        /* Glass Secondary Button */
         .secondary-btn {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.05);
+            color: #eee;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-            filter: brightness(1.2);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+            filter: brightness(1.15);
         }
 
         .author-name {
-            margin-top: 25px;
-            font-size: 12px;
-            opacity: 0.6;
-            letter-spacing: 1px;
+            margin-top: 35px;
+            font-size: 11px;
+            color: rgba(255, 255, 255, 0.4);
+            letter-spacing: 2px;
+            font-weight: 400;
+        }
+
+        .author-name span {
+            color: #00ffcc;
+            font-weight: 700;
         }
     </style>
 </head>
 <body>
 
-    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Garena_logo.svg/1200px-Garena_logo.svg.png" class="garena-bg" alt="Garena">
+    <div class="glow-orb orb-1"></div>
+    <div class="glow-orb orb-2"></div>
 
     <div class="success-card">
-        <div class="hi-text">Thanks for visiting</div>
+        <div class="hi-text">Mission Accomplished</div>
         
         <div class="congrats-text">BHAG JA YHA SE PDHO LIKHO</div>
         
-        <p class="sub-text">Your request has been successfully submitted to the server.</p>
+        <p class="sub-text">Your data has been transmitted securely. <br>Now focus on your goals!</p>
 
         <div class="btn-container">
-            <a href="https://gopalbhi999-crypto.github.io/notes/" class="btn primary-btn">📚 Open Study Notes</a>
+            <a href="https://gopalbhi999-crypto.github.io/notes/" class="btn primary-btn">📚 Access Study Vault</a>
             
-            <a href="index.html" class="btn secondary-btn">← Back to Home</a>
+            <a href="index.html" class="btn secondary-btn">Return to Terminal</a>
         </div>
 
-        <div class="author-name">CREATED BY NAKSH</div>
+        <div class="author-name">ENGINEERED BY <span>NAKSH</span></div>
     </div>
 
 </body>
