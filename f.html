@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Congratulations - Success</title>
+    <title>Success - Naksh Edition</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
     <style>
-        /* Full screen background matching the index page */
         body, html {
             height: 100%;
             margin: 0;
             font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            background: #0f0c29; /* Darker gaming theme */
+            background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -18,103 +19,122 @@
             overflow: hidden;
         }
 
-        /* Animated background elements for a premium feel */
-        .circle {
+        /* Garena Background Logo */
+        .garena-bg {
             position: absolute;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 50%;
+            width: 80%;
+            max-width: 600px;
+            opacity: 0.1; /* Transparent look */
             z-index: 0;
+            pointer-events: none;
+            filter: grayscale(100%) brightness(200%);
         }
 
-        /* Success Card */
         .success-card {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(15px);
-            padding: 50px 40px;
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(20px);
+            padding: 40px;
             border-radius: 30px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5);
             text-align: center;
-            width: 100%;
-            max-width: 500px;
+            width: 90%;
+            max-width: 450px;
             z-index: 1;
-            animation: fadeIn 0.8s ease-out;
+            animation: slideUp 0.8s ease-out;
         }
 
-        @keyframes fadeIn {
-            from { opacity: 0; transform: translateY(20px); }
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
             to { opacity: 1; transform: translateY(0); }
         }
 
         .hi-text {
-            font-size: 22px;
-            color: #ddd;
-            margin-bottom: 10px;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: #00d2ff;
+            margin-bottom: 5px;
         }
 
-        /* Big Highlighted Congratulations */
         .congrats-text {
-            font-size: 50px;
+            font-size: 38px;
             font-weight: 800;
-            background: linear-gradient(to bottom, #00ff87, #60efff);
+            line-height: 1.2;
+            background: linear-gradient(to right, #ff0000, #ff8c00); /* Garena Red/Orange vibe */
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
-            margin: 20px 0;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            filter: drop-shadow(0 0 10px rgba(0, 255, 135, 0.3));
+            margin: 15px 0;
         }
 
         .sub-text {
-            font-size: 18px;
-            color: #eee;
+            font-size: 16px;
+            color: #ccc;
             margin-bottom: 30px;
         }
 
-        .author-name {
-            font-size: 16px;
-            color: #00d2ff;
-            font-weight: bold;
-            margin-top: 10px;
+        /* Button Styling */
+        .btn-container {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
         }
 
-        /* Back Button */
-        .back-btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 12px 35px;
-            background: rgba(255, 255, 255, 0.15);
-            color: white;
+        .btn {
+            padding: 14px 25px;
+            border-radius: 12px;
             text-decoration: none;
-            border-radius: 50px;
             font-weight: 600;
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            transition: 0.3s;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            display: block;
+            border: none;
         }
 
-        .back-btn:hover {
-            background: #fff;
-            color: #1e3c72;
-            transform: scale(1.05);
+        .primary-btn {
+            background: linear-gradient(45deg, #ff416c, #ff4b2b);
+            color: white;
+            box-shadow: 0 4px 15px rgba(255, 65, 108, 0.4);
+        }
+
+        .secondary-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            filter: brightness(1.2);
+        }
+
+        .author-name {
+            margin-top: 25px;
+            font-size: 12px;
+            opacity: 0.6;
+            letter-spacing: 1px;
         }
     </style>
 </head>
 <body>
 
-    <div class="circle" style="width: 200px; height: 200px; top: 10%; left: 10%;"></div>
-    <div class="circle" style="width: 300px; height: 300px; bottom: -5%; right: -5%;"></div>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e0/Garena_logo.svg/1200px-Garena_logo.svg.png" class="garena-bg" alt="Garena">
 
     <div class="success-card">
-        <div class="hi-text">""THANKS FOR VISIT my web""</div>
+        <div class="hi-text">Thanks for visiting</div>
         
-        <div class="congrats-text">bhag ja yha se pdho likho</div>
+        <div class="congrats-text">BHAG JA YHA SE PDHO LIKHO</div>
         
-        <div class="sub-text">Your request has been submitted!</div>
+        <p class="sub-text">Your request has been successfully submitted to the server.</p>
 
-        <div class="author-name">By NAKSH</div>
+        <div class="btn-container">
+            <a href="https://gopalbhi999-crypto.github.io/notes/" class="btn primary-btn">📚 Open Study Notes</a>
+            
+            <a href="index.html" class="btn secondary-btn">← Back to Home</a>
+        </div>
 
-        <br>
-        <a href="index.html" class="back-btn">← Back to Home</a>
+        <div class="author-name">CREATED BY NAKSH</div>
     </div>
 
 </body>
